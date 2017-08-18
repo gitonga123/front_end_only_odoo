@@ -33,5 +33,29 @@
     <field name="sequence">10</field>
    </record>
 
+   <record id="action_my_customers" model="ir.actions.act_window">
+    <field name="name">
+      French Customers</field>
+      <field name="res_model">res.partner</field>
+      <field name="domain">
+        [('customer','=',True), ('user_id','=',uid),('lang','!=','fr_FR')]
+      </field>
+    </record>
+
+    <record id="action_customers_or_suppliers" model="ir.actions.act_window">
+      <field name="name">Suppliers</field>
+      <field name="res_model">res.partner</field>
+      <field name="domain">[('customer','=',True),('supplier','=',True)]
+      </field>
+    </record>
+
+    <menuitem id="customers_speak_french" action="action_my_customers" parent="menu_custom_left" sequence="15"/>
+
+    <menuitem id="customers_suppliers" action="action_customers_or_suppliers" parent="menu_custom_left" sequence="20"/>
+
+    <!-- <act_window id="suppliers_list" name="Suppliers" res_model="res.partner" view_mode="tree"/>
+
+    <act_window id="french_customers_list" name="French Customers" res_model="res.partner" view_mode="tree"/> -->
+
    </data>
 </openerp>
