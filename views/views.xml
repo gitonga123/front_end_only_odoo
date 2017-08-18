@@ -12,8 +12,13 @@
       <field name="model">res.partner</field>
       <field name="arch" type="xml">
         <form>
-          <group>
+          <header>
+            <button type="object" name="open_commercial_entity" string="Open Commercial Partner" class="oe_highlight"/>
+          </header>
+
+          <group string="Content" name="my_content">
             <field name="name"/>
+            <field name="category_id" widget="many2many_tags"/>
           </group>
         </form>
       </field>
