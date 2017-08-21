@@ -16,10 +16,19 @@
             <button type="object" name="open_commercial_entity" string="Open Commercial Partner" class="oe_highlight"/>
 
             <button type="action" name="%(base.action_partner_category_form)d" string="Open Partner Category"/>
+
+            <button name="do_something_else" string="Second Action" />
+            <!-- <field name="state" widget="statusbar" /> -->
           </header>
 
           <group string="Content" name="my_content">
-            <field name="name"/>
+            <sheet>
+              <div class="oe_left oe_title">
+                <label for="name" />
+                <h1>
+                  <field name="name"/></h1>
+                </div>
+              </sheet>
             <field name="category_id" widget="many2many_tags"/>
           </group>
         </form>
